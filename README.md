@@ -124,14 +124,25 @@ cd TMDB_App
 
 ### 2. Set the TMDB API key
 
-The frontend reads the API key from an environment variable. Create a `.env` file inside `frontend/`:
+The frontend reads the TMDB API key from a `.env` file inside `frontend/`.
+
+Create `frontend/.env` with:
+
+```bash
+VITE_TMDB_API_KEY="your_api_key_here"
+```
+
+or use command-line:
+
 ```bash
 echo 'VITE_TMDB_API_KEY="your_api_key_here"' > frontend/.env
 ```
+
 A plain unquoted value also works in most cases:
 ```bash
 echo "VITE_TMDB_API_KEY=your_api_key_here" > frontend/.env
 ```
+
 ### 3. Build and start all services
 
 ```bash
