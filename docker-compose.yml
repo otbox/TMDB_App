@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: tmdb_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - db_data:/app/instance 
+    environment:
+      - FLASK_ENV=production
+
+  frontend:
+    build: ./frontend
+    container_name: tmdb_frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
