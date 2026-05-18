@@ -125,11 +125,13 @@ cd TMDB_App
 ### 2. Set the TMDB API key
 
 The frontend reads the API key from an environment variable. Create a `.env` file inside `frontend/`:
-
+```bash
+echo 'VITE_TMDB_API_KEY="your_api_key_here"' > frontend/.env
+```
+A plain unquoted value also works in most cases:
 ```bash
 echo "VITE_TMDB_API_KEY=your_api_key_here" > frontend/.env
 ```
-
 ### 3. Build and start all services
 
 ```bash
@@ -216,5 +218,5 @@ All protected routes require the `Authorization: Bearer <token>` header obtained
 - View movie details in a modal
 - Register and log in with JWT authentication
 - Rate movies with a half-star precision picker (0.5 to 5 stars)
-- View and manage all your rated movies on a dedicated page
+- View and manage all your rated movies on a dedicated page 
 - Persistent ratings stored in SQLite via Docker volume
